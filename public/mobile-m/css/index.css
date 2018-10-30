@@ -1,0 +1,74 @@
+.le_container{
+    width: 100%;
+    height: 100%;
+}
+.le_container .le_header{
+    width: 100%;
+    height: 45px;
+    background-color: #006699;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.le_container .le_header h3{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 45px;
+    font-weight: normal;
+    /*position: absolute;*/
+}
+.le_container .le_header a{
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    top: 0;
+}
+.le_container .le_header a.left{
+    left: 0;
+}
+.le_container .le_header a.right{
+    right: 0;
+}
+.le_container .le_header a span{
+    color: #fff;
+}
+.le_container .le_footer{
+    width: 100%;
+    height: 55px;
+    background-color: #006699;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.le_container .le_footer a{
+    display: block;
+    width: 25%;
+    height: 100%;
+    float: left;
+    color: #fff;
+    text-align: center;
+    line-height: 100%;
+    padding-top: 10px;
+}
+.le_container .le_footer a.now{
+    color: orange;
+}
+.le_container .le_footer a span{
+    display: block;
+    font-size: 12px;
+    padding-top: 5px;
+}
+.le_container .le_content{
+    width: 100%;
+    height: 100%;
+    padding: 45px 0 55px 0;
+}
+.le_container .le_content .le_wrapper{
+    width: 100%;
+    height: 100%;
+}
