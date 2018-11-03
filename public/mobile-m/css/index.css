@@ -1,74 +1,117 @@
-.le_container{
+.mui-slider-indicator{
+    bottom: 20px;
+}
+/*导航*/
+.le_nav{
     width: 100%;
-    height: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
 }
-.le_container .le_header{
-    width: 100%;
-    height: 45px;
-    background-color: #006699;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-.le_container .le_header h3{
-    padding: 0;
-    margin: 0;
-    color: #fff;
-    font-size: 16px;
-    text-align: center;
-    line-height: 45px;
-    font-weight: normal;
-    /*position: absolute;*/
-}
-.le_container .le_header a{
-    position: absolute;
-    width: 45px;
-    height: 45px;
-    text-align: center;
-    line-height: 45px;
-    top: 0;
-}
-.le_container .le_header a.left{
-    left: 0;
-}
-.le_container .le_header a.right{
-    right: 0;
-}
-.le_container .le_header a span{
-    color: #fff;
-}
-.le_container .le_footer{
-    width: 100%;
-    height: 55px;
-    background-color: #006699;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-}
-.le_container .le_footer a{
+.le_nav a{
     display: block;
-    width: 25%;
-    height: 100%;
+    width: 33.33333333%;
     float: left;
-    color: #fff;
-    text-align: center;
-    line-height: 100%;
-    padding-top: 10px;
 }
-.le_container .le_footer a.now{
-    color: orange;
-}
-.le_container .le_footer a span{
+.le_nav a img{
     display: block;
+    width: 100%;
+}
+/*活动*/
+.le_active{
+    width: 100%;
+    padding: 0 10px;
+
+}
+.le_active a{
+    display: block;
+}
+.le_active a img{
+    display: block;
+}
+.le_active a:nth-of-type(1){
+    width: 67.1%;
+    float: left;
+}
+.le_active a:nth-of-type(1) img{
+    width: 50%;
+    float: left;
+}
+.le_active a:nth-of-type(2){
+    width: 32.9%;
+    float: right;
+    height: 100%;
+}
+.le_active a:nth-of-type(2) img{
+    width: 100%;
+    float: right;
+}
+.le_active a:nth-of-type(3){
+    width: 67.1%;
+}
+.le_active a:nth-of-type(3) img{
+    width: 50%;
+    float: left;
+}
+/*品牌*/
+.le_brand{
+    width: 100%;
+    padding: 5px 10px;
+}
+.le_brand > img{
+    display: block;
+    width: 100%;
+}
+.le_brand > ul > li{
+    width: 33.33333%;
+    float: left;
+}
+.le_brand > ul > li > img{
+    display: block;
+    width: 100%;
+}
+/*生活用品*/
+.le_live{
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.le_live > img{
+    display: block;
+    width: 100%;
+}
+.le_live .le_product{
+    display: block;
+    width: 50%;
+    padding: 0 4px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    float: left;
+    box-sizing: border-box;
+ }
+.le_live .le_product .le_pro_box{
+    padding: 10px 0;
+    border: 1px solid #CCCCCC;
+}
+.le_live .le_product .le_pro_box img{
+    display: block;
+    width: 100%;
+}
+.le_live .le_product .le_pro_box .messege p:first-of-type{
+    padding: 10px;
+}
+.le_live .le_product .le_pro_box .messege p:last-of-type{
+    margin-bottom: 10px;
     font-size: 12px;
-    padding-top: 5px;
 }
-.le_container .le_content{
-    width: 100%;
-    height: 100%;
-    padding: 45px 0 55px 0;
+.le_live .le_product .le_pro_box .messege p:last-of-type span:first-of-type{
+    color: red;
+    margin-right: 10px;
 }
-.le_container .le_content .le_wrapper{
-    width: 100%;
-    height: 100%;
+.le_live .le_product .le_pro_box .messege p:last-of-type span:last-of-type{
+    text-decoration: line-through;
+}
+.le_live .le_product .le_pro_box .messege button{
+    background-color: #006699;
+    color: #fff;
 }
