@@ -4,9 +4,12 @@ body{
 ul{
     list-style: none;
 }
-ul,li,p{
+ul,li,p,form,input{
     padding: 0;
     margin: 0;
+}
+a{
+    text-decoration: none;
 }
 /*框架*/
 .le_container{
@@ -81,7 +84,6 @@ ul,li,p{
     padding: 45px 0 55px 0;
     width: 100%;
     height: 100%;
-
 }
 .le_container .le_content .le_wrapper{
     width: 100%;

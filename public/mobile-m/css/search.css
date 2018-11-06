@@ -1,0 +1,136 @@
+.le_search{
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 10px;
+    position: relative;
+}
+.le_search form{
+    width: 100%;
+    height: auto;
+
+}
+.le_search form input{
+    text-align: left;
+    height: 30px;
+    margin-bottom: 0;
+    background-color: #fff;
+    border: 1px solid #006699;
+    line-height: 30px;
+    padding-left: 10px;
+    font-size: 12px;
+}
+.le_search a{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    background-color: #069;
+    border-radius: 0 6px 6px 0;
+    color: #fff;
+}
+
+.le_history{
+    padding: 10px;
+    color: #666;
+    font-size: 12px;
+}
+.le_history .title{
+    float: left;
+    line-height: 21px;
+}
+.le_history .icon_clear{
+    float: right;
+    line-height: 21px;
+}
+.le_history ul{
+    margin-top: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.le_history ul li{
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 0 10px;
+}
+.le_history ul li a {
+    display: inline-block;
+    font-size: 12px;
+    color: #666;
+}
+.le_history ul li .icon_delete {
+    font-size: 12px;
+    color: #666;
+    float: right;
+    margin-top: 8px;
+}
+/*searchlist.html 排序栏*/
+.le_order {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: #efeff4;
+    box-shadow: 2px 0 2px #ccc;
+    margin: 15px 0;
+}
+.le_order a{
+    width: 25%;
+    height: 30px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #333;
+}
+.le_order a.now{
+    color: orange;
+}
+/*searchlist.html商品区域*/
+.le_live{
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.le_live > img{
+    display: block;
+    width: 100%;
+}
+.le_live .le_product{
+    display: block;
+    width: 50%;
+    padding: 0 4px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    float: left;
+    box-sizing: border-box;
+}
+.le_live .le_product .le_pro_box{
+    padding: 10px 0;
+    border: 1px solid #CCCCCC;
+}
+.le_live .le_product .le_pro_box img{
+    display: block;
+    width: 100%;
+}
+.le_live .le_product .le_pro_box .messege p:first-of-type{
+    padding: 10px;
+}
+.le_live .le_product .le_pro_box .messege p:last-of-type{
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+.le_live .le_product .le_pro_box .messege p:last-of-type span:first-of-type{
+    color: red;
+    margin-right: 10px;
+}
+.le_live .le_product .le_pro_box .messege p:last-of-type span:last-of-type{
+    text-decoration: line-through;
+}
+.le_live .le_product .le_pro_box .messege button{
+    background-color: #006699;
+    color: #fff;
+}
