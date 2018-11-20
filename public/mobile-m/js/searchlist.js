@@ -100,6 +100,7 @@ $(function () {
                 pageSize: 4,
             },function (data) {
                 $(".le_live").html(template("product",data));
+                console.log(data);
                 mui('#refreshContainer').pullRefresh().endPulldownToRefresh();
                 mui('#refreshContainer').pullRefresh().refresh(true); //重置上拉刷新
             });

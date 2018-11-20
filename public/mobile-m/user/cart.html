@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--ios是否运行创建快捷启动方式-->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <!--ios顶部通知栏的样式 黑色-->
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <!--遇到数字不转成电话号码格式-->
+    <meta content="telephone=no" name="format-detection">
+    <meta name="description" content="乐淘是中国最大的正品运动鞋、皮鞋网上专卖。乐淘网经营的品牌包括耐克、阿迪达斯、李宁、匡威等国内外知名品牌的篮球鞋,板鞋,休闲鞋,跑步鞋,帆布...">
+    <meta name="Keywords"
+          content="乐淘 乐淘鞋城 买鞋子 上乐淘 运动鞋 篮球鞋 帆布鞋 跑步鞋 男鞋 女鞋 足球鞋 休闲鞋 凉鞋 户外鞋 布洛克 高跟鞋 单鞋 豆豆鞋 乐福鞋 牛津鞋 凉拖 皮鞋 短靴 长靴 登山鞋 徒步鞋 硫化鞋 训练鞋 溯溪鞋 越野鞋 板鞋 足球鞋 网球鞋 赛车鞋 雪地靴 马丁靴 商务 英伦">
+    <link type="image/x-icon" rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../assets/mui/css/mui.min.css"/>
+    <link rel="stylesheet" href="../assets/fontAwesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/cart.css"/>
+    <title>乐淘-购物车</title>
+</head>
+<body>
+<div class="le_container">
+    <header class="le_header">
+        <a class="left" href="javascript:history.back();"><span class="fa fa-arrow-left"></span></a>
+        <h3>购物车</h3>
+        <a class="right" href="javascript:;"><span class="icon_refresh fa fa-refresh"></span></a>
+    </header>
+    <div class="le_content">
+        <div class="le_wrapper">
+            <div id="refreshContainer" class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul id="cart_box" class="mui-table-view mui-table-view-chevron">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cart_order">订单总额：¥<span id="cartAmount">0.00</span><a href="javascript:;">生成订单</a></div>
+    <footer class="le_footer">
+        <a class="tab_home fa fa-home" href="../index.html"><span>首页</span></a>
+        <a class="tab_cate fa fa-bars" href="../category.html"><span>分类</span></a>
+        <a class="tab_cart fa fa-shopping-cart now" href="cart.html"><span>购物车</span></a>
+        <a class="tab_user fa fa-user" href="index.html"><span>会员中心</span></a>
+    </footer>
+</div>
+<script type="text/artTemplate" id="total-amount">
+
+</script>
+<script type="text/artTemplate" id="product">
+    <% for(var i=0; i< data.length; i++){ %>
+    <li data-product="<%= data[i].productId %>" class="mui-table-view-cell">
+        <div class="mui-slider-right mui-disabled">
+            <a data-id="<%= data[i].id %>" class="mui-btn mui-btn-blue"><span class="mui-icon mui-icon-compose"></span></a>
+            <a data-id="<%= data[i].id %>" class="mui-btn mui-btn-red"><span class="mui-icon mui-icon-trash"></span></a>
+        </div>
+        <a data-product="<%= data[i].productId %>" href="javascript:;" class="mui-navigate-right mui-slider-handle linked">
+            <%
+                var addr = '../images/none.png';
+                if(data[i].pic && data[i].pic[0] && data[i].pic[0].picAddr){
+                    addr = data[i].pic[0].picAddr;
+                }
+            %>
+            <img class="mui-media-object mui-pull-left" src="<%= addr %>">
+            <div class="mui-media-body">
+                <p class="name"><%= data[i].proName %></p>
+                <p class="info">
+                    <span class="price">¥<%= data[i].price %></span>
+                    <span class="oldPrice">¥<%= data[i].oldPrice %></span>
+                    <span class="number">x<%= data[i].num %>双</span>
+                </p>
+                <p><span class="size">鞋码：<%= data[i].size %></span></p>
+            </div>
+        </a>
+        <input data-id="<%= data[i].id %>" name="checkbox" type="checkbox">
+    </li>
+    <% } %>
+
+</script>
+<script type="text/artTemplate" id="message">
+    <div class="cart_update">
+        <div class="p_size">
+            尺码：
+            <%
+                var sizeArr = productSize.split("-");
+                for(var i=sizeArr[0]; i< sizeArr[1]; i++){
+            %>
+            <span class="btn_size <%= i==size ? 'now' : '' %>"><%= i %></span>
+            <% } %>
+        </div>
+        <div class="p_number">
+            数量：
+            <span class="minus">-</span><input readonly type="text" value="<%= num %>" data-max="<%= productNum %>"><span class="plus">+</span>
+            剩余：<%= productNum %> 件
+        </div>
+    </div>
+</script>
+
+<script src="../assets/zepto/zepto.min.js"></script>
+<script src="../assets/artTemplate/template-native.js"></script>
+<script src="../assets/mui/js/mui.min.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/user/cart.js"></script>
+</body>
+</html>

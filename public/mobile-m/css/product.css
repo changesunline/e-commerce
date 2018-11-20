@@ -145,3 +145,27 @@ body{
     margin-right: 6px;
     background-color: #fa672d;
 }
+/*加载图标转起来*/
+.mui-scroll{
+    min-height: 100%;
+}
+.loading{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation: 1s ease-in infinite rotateLoading;
+}
+.mui-icon.mui-icon-spinner.mui-spin{
+    color: #069;
+}
+@keyframes rotateLoading {
+    from{
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%,-50%) rotate(360deg);
+        -webkit-transform: translate(-50%,-50%) rotate(360deg);
+    }
+
+}

@@ -10,7 +10,33 @@ $(function () {
     });
 })
 
-window.LETAO = {}
+window.LETAO = {};
+
+
+//序列化转对象
+LETAO.serializeToObject = function (serializeStr) {
+    var obj = {};
+    if (serializeStr) {
+        var arr = serializeStr.split("&");
+        arr.forEach(function (item, i) {
+            var itemArr = item.split("=");
+            obj[itemArr[0]] = itemArr[1];
+        });
+    }
+    return obj;
+}
+
+//获取元素id
+LETAO.getItemById = function (arr,id) {
+    var itemobj = null;
+    arr.forEach(function (item,i) {
+        if (item.id == id){
+            itemobj = item;
+        }
+    });
+    return itemobj;
+}
+
 //从地址栏获取关键字的方法
 LETAO.getParamsByUrl = function () {
     var params = {};
@@ -26,3 +52,32 @@ LETAO.getParamsByUrl = function () {
     }
     return params;
 }
+//登陆ajax
+LETAO.loginUrl = "/mobile-m/user/login.html";
+LETAO.cartUrl = "/mobile-m/user/cart.html";
+LETAO.usertUrl = "/mobile-m/user/index.html";
+LETAO.loginAjax = function (params) {
+    $.ajax({
+        url: params.url || '#',
+        type: params.type || 'get',
+        data: params.data || '',
+        dataType: params.dataType || 'json',
+        beforeSend:function(){
+            params.beforeSend && params.beforeSend();
+        },
+        success: function (data) {
+            //未登录处理
+            if (data.error == 400){
+                //调转到登陆页面
+                location.href = LETAO.loginUrl + "?returnUrl=" + location.href;
+                return false;
+            }else{
+                params.success && params.success(data);
+            }
+        },
+        error: function () {
+            mui.toast("系统繁忙");
+        }
+    });
+}
+
